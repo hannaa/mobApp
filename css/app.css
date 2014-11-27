@@ -11,8 +11,7 @@ body {
 
 .header{
 	text-align: center;
-	
-	font-family: 'Pacifico', cursive;
+	font-family: 'Luckiest Guy';
 	font-size: 20px;
 	color:  #FFFFFF;
 	width: 52%;
@@ -21,7 +20,9 @@ body {
 	
 }
 
-
+#kortit{
+	margin-left: 40%;
+}
 	
 .slot1 {
   width: 50px;
