@@ -57,34 +57,109 @@ body {
 
 @media screen and (max-device-width: 800px){
 	
+  body {
+  box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+  background-color: #8B008B;
+  
+}
+.container{
+  background-color: #8B008B;
+  }
+
+.header{
+  text-align: center;
+  font-family: 'Luckiest Guy';
+  font-size: 40px;
+  color:  #FFFFFF;
+  width: 52%;
+  margin-left: 25%;
+  border-radius: 15px;
+  
+}
+
+#kortit{
+  margin-left: 40%;
+}
+
+#kortti_takaa_1{
+  width: 100%;
+}
+
+#kortti_takaa_2{
+  width: 100%;
+}
+
+#kortti_takaa_3{
+  width: 100%;
+}
+
+#kortti_takaa_4{
+  width: 100%;
+}
+
+#kortti_takaa_5{
+  width: 100%;
+}
+
+#kortti_takaa_6{
+  width: 100%;
+}
+
+#kortti_1{
+  width: 100%;
+}
+
+#kortti_2{
+  width: 100%;
+}
+
+#kortti_3{
+  width: 100%;
+}
+
+#kortti_4{
+  width: 100%;
+}
+
+#kortti_5{
+  width: 100%;
+}
+
+#kortti_6{
+  width: 100%;
+}
+
 .slot1 {
-  width: 50px;
-  height: 50px;
+  width: 400px;
+  height: 400px;
   
 }
 .slot2 {
-  width: 50px;
-  height: 50px;
+  width: 400px;
+  height: 400px;
   margin-left: 90px;
 }
 .slot3 {
-  width: 50px;
-  height: 50px;
+  width: 400px;
+  height: 400px;
   margin-left: 180px;
 }
 .slot4 {
-  width: 50px;
-  height: 50px;
+  width: 400px;
+  height: 400px;
   margin-top: -70px;
+  
 }
 .slot5 {
-  width: 50px;
-  height: 50px;
+  width: 400px;
+  height: 400px;
   margin-left: 90px;
 }
 .slot6 {
-  width: 50px;
-  height: 50px;
+  width: 400px;
+  height: 400px;
   margin-left: 180px;
 }
 
