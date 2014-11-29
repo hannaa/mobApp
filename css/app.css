@@ -58,9 +58,7 @@ body {
 @media screen and (max-device-width: 800px){
 	
   body {
-  box-sizing: border-box;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
+  
   background-color: #8B008B;
   
 }
@@ -80,7 +78,8 @@ body {
 }
 
 #kortit{
-  margin-left: 40%;
+  width: 100%;
+  
 }
 
 #kortti_takaa_1{
@@ -97,14 +96,17 @@ body {
 
 #kortti_takaa_4{
   width: 100%;
+  
 }
 
 #kortti_takaa_5{
   width: 100%;
+  
 }
 
 #kortti_takaa_6{
   width: 100%;
+  
 }
 
 #kortti_1{
@@ -132,35 +134,37 @@ body {
 }
 
 .slot1 {
-  width: 400px;
-  height: 400px;
+  width: 300px;
+  height: 300px;
   
 }
 .slot2 {
-  width: 400px;
-  height: 400px;
-  margin-left: 90px;
+  width: 300px;
+  height: 300px;
+
+
 }
 .slot3 {
-  width: 400px;
-  height: 400px;
-  margin-left: 180px;
-}
-.slot4 {
-  width: 400px;
-  height: 400px;
-  margin-top: -70px;
+  width: 300px;
+  height: 300px;
   
 }
-.slot5 {
-  width: 400px;
-  height: 400px;
-  margin-left: 90px;
+.slot4 {
+  width: 300px;
+  height: 300px;
+ 
 }
+.slot5 {
+  width: 300px;
+  height: 300px;
+ 
+ }
+
 .slot6 {
-  width: 400px;
-  height: 400px;
-  margin-left: 180px;
+  width: 300px;
+  height: 300px;
+ 
+  
 }
 
 }
