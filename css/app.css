@@ -76,6 +76,16 @@ body {
   border-radius: 15px;
   
 }
+.vasen{
+  width: 40%;
+  margin-top: 10%;
+  float: left;
+}
+.oikea{
+  width: 40%;
+  margin-top: 10%;
+  float: left;
+}
 
 #kortit{
   width: 100%;
