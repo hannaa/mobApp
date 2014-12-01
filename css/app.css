@@ -20,8 +20,19 @@ body {
 	
 }
 
+.playbutton{
+  width: 269px;
+  float: left;
+}
+
+.backbutton{
+  width: 269px;
+  float: right;
+}
+
 #kortit{
 	margin-left: 40%;
+  width: 500px;
 }
 	
 .slot1 {
