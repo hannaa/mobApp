@@ -20,48 +20,60 @@ body {
 	
 }
 
+#timer{
+	font-family: 'Luckiest Guy';
+	color:  #FFFFFF;
+	width: 50%px;
+	float: left;
+	margin-left: 10%
+}
+
+#points{
+	height:50px;
+	float:left;
+	width: 25%;
+}
+#pair_kuva{
+	width: 100px;
+	margin-left: 20px;
+}
 
 .vasen{
-	width: 150px;
+	width: 100px;
 	height: 100%;
 	float: left;
  }	
  
  .oikea{
-	width: 150px;
+	width: 100px;
 	height: 100%;
 	float: left;
-	margin-left: 5%;
+	
  }	
 
 .playbutton{
   width: 269px;
-  float: right;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .backbutton{
-  width: 269px;
-  float: right;
+  width: 200px;
+  margin-left: auto;
+  margin-right: auto;
+  height: 70px;
+}
+
+#back_button{
+	width: 50%;
+	float: left;
 }
 
 #kortit{
-	margin-left: 30%;
-	height: 500px;
-}
-.playbutton{
-  width: 269px;
-  float: left;
-}
-
-.backbutton{
-  width: 269px;
-  float: right;
-}
-
-#kortit{
-	margin-left: 30%;
-	width: 500px;
-
+	margin-left: auto;
+	margin-right: auto;
+	width: 200px;
+	height: 50%;
 }
 	
 .slot1 {
