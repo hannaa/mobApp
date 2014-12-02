@@ -1,5 +1,8 @@
 $(document).ready(function(){
 	//ensimmäinen versio: löydä parit! :D
+	
+	var random = ['#kortti_1', '#kortti_2', '#kortti_3', '#kortti_4', '#kortti_5', '#kortti_6', '#kortti_7', '#kortti_8']
+	
 	$('#kortti_1').hide();
 	$('#kortti_2').hide();
 	$('#kortti_3').hide();
@@ -7,6 +10,7 @@ $(document).ready(function(){
 	$('#kortti_5').hide();
 	$('#kortti_6').hide();
 	$('#kortti_7').hide();
+	$('#kortti_8').hide();
 	
 	$('#kortti_takaa_1').click(function(){
 		$('#kortti_takaa_1').hide();
@@ -36,6 +40,10 @@ $(document).ready(function(){
 		$('#kortti_takaa_7').hide();
 		$('#kortti_7').show();
 	});
+	$('#kortti_takaa_8').click(function(){
+		$('#kortti_takaa_8').hide();
+		$('#kortti_8').show();
+	});
 	
 	$('#kortti_1').click(function(){
 		$('#kortti_1').hide();
@@ -64,6 +72,10 @@ $(document).ready(function(){
 	$('#kortti_7').click(function(){
 		$('#kortti_7').hide();
 		$('#kortti_takaa_7').show();
+	});
+	$('#kortti_8').click(function(){
+		$('#kortti_8').hide();
+		$('#kortti_takaa_8').show();
 	});
 
 	
