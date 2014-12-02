@@ -11,8 +11,7 @@ body {
 
 .header{
 	text-align: center;
-	
-	font-family: 'Pacifico', cursive;
+	font-family: 'Luckiest Guy';
 	font-size: 20px;
 	color:  #FFFFFF;
 	width: 52%;
@@ -21,7 +20,32 @@ body {
 	
 }
 
+.vasen{
+	width: 150px;
+	height: 100%;
+	float: left;
+ }	
+ 
+ .oikea{
+	width: 150px;
+	height: 100%;
+	float: left;
+	margin-left: 5%;
+ }	
 
+.playbutton{
+  width: 269px;
+  float: right;
+}
+
+.backbutton{
+  width: 269px;
+  float: right;
+}
+
+#kortit{
+	margin-left: 30%;
+}
 	
 .slot1 {
   width: 50px;
@@ -31,60 +55,152 @@ body {
 .slot2 {
   width: 50px;
   height: 50px;
-  margin-left: 90px;
+  
 }
 .slot3 {
   width: 50px;
   height: 50px;
-  margin-left: 180px;
+  
 }
 .slot4 {
   width: 50px;
   height: 50px;
-  margin-top: -70px;
+  margin-left: 15%;
+  
 }
 .slot5 {
   width: 50px;
   height: 50px;
-  margin-left: 90px;
+  margin-left: 15%;
+  
 }
 .slot6 {
   width: 50px;
   height: 50px;
-  margin-left: 180px;
+  margin-left: 15%;
+  
 }
 
 @media screen and (max-device-width: 800px){
 	
+  body {
+  
+  background-color: #8B008B;
+  
+}
+.container{
+  background-color: #8B008B;
+  }
+
+.header{
+  text-align: center;
+  font-family: 'Luckiest Guy';
+  font-size: 40px;
+  color:  #FFFFFF;
+  width: 52%;
+  margin-left: 25%;
+  border-radius: 15px;
+  
+}
+.vasen{
+  width: 40%;
+  margin-top: 10%;
+  float: left;
+}
+.oikea{
+  width: 40%;
+  margin-top: 10%;
+  float: left;
+}
+
+#kortit{
+  width: 100%;
+  
+}
+
+#kortti_takaa_1{
+  width: 100%;
+}
+
+#kortti_takaa_2{
+  width: 100%;
+}
+
+#kortti_takaa_3{
+  width: 100%;
+}
+
+#kortti_takaa_4{
+  width: 100%;
+  
+}
+
+#kortti_takaa_5{
+  width: 100%;
+  
+}
+
+#kortti_takaa_6{
+  width: 100%;
+  
+}
+
+#kortti_1{
+  width: 100%;
+}
+
+#kortti_2{
+  width: 100%;
+}
+
+#kortti_3{
+  width: 100%;
+}
+
+#kortti_4{
+  width: 100%;
+}
+
+#kortti_5{
+  width: 100%;
+}
+
+#kortti_6{
+  width: 100%;
+}
+
 .slot1 {
-  width: 50px;
-  height: 50px;
+  width: 300px;
+  height: 300px;
   
 }
 .slot2 {
-  width: 50px;
-  height: 50px;
-  margin-left: 90px;
+  width: 300px;
+  height: 300px;
+
+
 }
 .slot3 {
-  width: 50px;
-  height: 50px;
-  margin-left: 180px;
+  width: 300px;
+  height: 300px;
+  
 }
 .slot4 {
-  width: 50px;
-  height: 50px;
-  margin-top: -70px;
+  width: 300px;
+  height: 300px;
+ 
 }
 .slot5 {
-  width: 50px;
-  height: 50px;
-  margin-left: 90px;
-}
+  width: 300px;
+  height: 300px;
+ 
+ }
+
 .slot6 {
-  width: 50px;
-  height: 50px;
-  margin-left: 180px;
+  width: 300px;
+  height: 300px;
+ 
+  
 }
 
 }
