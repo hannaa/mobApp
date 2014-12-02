@@ -6,6 +6,7 @@ $(document).ready(function(){
 	$('#kortti_4').hide();
 	$('#kortti_5').hide();
 	$('#kortti_6').hide();
+	$('#kortti_7').hide();
 	
 	$('#kortti_takaa_1').click(function(){
 		$('#kortti_takaa_1').hide();
@@ -31,6 +32,10 @@ $(document).ready(function(){
 		$('#kortti_takaa_6').hide();
 		$('#kortti_6').show();
 	});
+	$('#kortti_takaa_7').click(function(){
+		$('#kortti_takaa_7').hide();
+		$('#kortti_7').show();
+	});
 	
 	$('#kortti_1').click(function(){
 		$('#kortti_1').hide();
@@ -55,6 +60,10 @@ $(document).ready(function(){
 	$('#kortti_6').click(function(){
 		$('#kortti_6').hide();
 		$('#kortti_takaa_6').show();
+	});
+	$('#kortti_7').click(function(){
+		$('#kortti_7').hide();
+		$('#kortti_takaa_7').show();
 	});
 
 	
