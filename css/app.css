@@ -20,6 +20,7 @@ body {
 	
 }
 
+<<<<<<< HEAD
 .vasen{
 	width: 150px;
 	height: 100%;
@@ -45,6 +46,21 @@ body {
 
 #kortit{
 	margin-left: 30%;
+=======
+.playbutton{
+  width: 269px;
+  float: left;
+}
+
+.backbutton{
+  width: 269px;
+  float: right;
+}
+
+#kortit{
+	margin-left: 40%;
+  width: 500px;
+>>>>>>> c5623d0d2dbcbb40baaaaaf6eda170f69b52d9aa
 }
 	
 .slot1 {
