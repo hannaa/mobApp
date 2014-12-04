@@ -21,10 +21,11 @@ body {
 	
 }
 #kortit{ 
-	margin-left: 35%; 
+	margin-left: auto; 
+	margin-right: auto;
 	
 	margin-top: 5%;
-	width: 30%;
+	width: 700px;
 	height: 600px;
 	background-color: #000000;
 	
@@ -51,7 +52,7 @@ body {
 	float: left;
 	margin-right: 20%;
 	margin-left: 20%;
-	margin-left: 20%;
+	
 } 
 .nelja{
 	width: 10%;
@@ -164,9 +165,9 @@ body {
   
 }
 
-@media screen and (max-device-width: 800px){
+@media screen and (max-device-width: 960px){
 	
-  body {
+body {
   
   background-color: #8B008B;
   
@@ -186,8 +187,8 @@ body {
   
 }
 #kortit{
-  width: 640px;
-  float: left;
+  width: 100%;
+  
   
 }
 
@@ -200,13 +201,14 @@ body {
   width: 20%;
   margin-top: 10%;
   float: left;
-  margin-left: 20%;
+  margin-left: 5%;
 }
 .kolme{
   width: 20%;
   margin-top: 10%;
   float: left;
-  margin-right: 20%;
+  margin-right: 5%;
+  margin-left: 5%;
 }
 .nelja{
   width: 20%;
@@ -349,84 +351,84 @@ body {
 
 
 .slot1 {
-  width: 300px;
-  height: 300px;
+  width: 200px;
+  height: 200px;
   
 }
 .slot2 {
-  width: 300px;
-  height: 300px;
+  width: 200px;
+  height: 200px;
 
 
 }
 .slot3 {
-  width: 300px;
-  height: 300px;
+  width: 200px;
+  height: 200px;
   
 }
 .slot4 {
-  width: 300px;
-  height: 300px;
+  width: 200px;
+  height: 200px;
  
 }
 .slot5 {
-  width: 300px;
-  height: 300px;
+  width: 200px;
+  height: 200px;
  
  }
 
 .slot6 {
-  width: 300px;
-  height: 300px;
+  width: 200px;
+  height: 200px;
  
   
 }
 .slot7 {
-  width: 300px;
-  height: 300px;
+  width: 200px;
+  height: 200px;
   
 }
 .slot8 {
-  width: 300px;
-  height: 300px;
+  width: 200px;
+  height: 200px;
 
 
 }
 .slot9{
-  width: 300px;
-  height: 300px;
+  width: 200px;
+  height: 200px;
   
 }
 .slot10 {
-  width: 300px;
-  height: 300px;
+  width: 200px;
+  height: 200px;
  
 }
 .slot11 {
-  width: 300px;
-  height: 300px;
+  width: 200px;
+  height: 200px;
  
  }
 
 .slot12 {
-  width: 300px;
-  height: 300px;
+  width: 200px;
+  height: 200px;
 }
 .slot13 {
-  width: 300px;
-  height: 300px;
+  width: 200px;
+  height: 200px;
 }
 .slot14 {
-  width: 300px;
-  height: 300px;
+  width: 200px;
+  height: 200px;
 }
 .slot15 {
-  width: 300px;
-  height: 300px;
+  width: 200px;
+  height: 200px;
 }
 .slot16 {
-  width: 300px;
-  height: 300px;
+  width: 200px;
+  height: 200px;
 }
 
 }
