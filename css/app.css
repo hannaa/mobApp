@@ -7,6 +7,7 @@ body {
 }
 .container{
 	background-color: #8B008B;
+	margin: 0 auto;
 	}
 
 .header{
@@ -19,20 +20,45 @@ body {
 	border-radius: 15px;
 	
 }
+#kortit{ 
+	margin-left: 35%; 
+	
+	margin-top: 5%;
+	width: 30%;
+	height: 600px;
+	background-color: #000000;
+	
+}
 
-
-.vasen{
-	width: 150px;
+.yksi{
+	width: 10%;
 	height: 100%;
 	float: left;
+	
+	
  }	
  
- .oikea{
-	width: 150px;
+ .kaksi{
+	width: 10%;
 	height: 100%;
 	float: left;
-	margin-left: 5%;
- }	
+	margin-left: 20%;
+ }
+
+.kolme{
+	width: 10%;
+	height: 100%;
+	float: left;
+	margin-right: 20%;
+	margin-left: 20%;
+	margin-left: 20%;
+} 
+.nelja{
+	width: 10%;
+	height: 100%;
+	float: right;
+	
+} 
 
 .playbutton{
   width: 269px;
@@ -44,25 +70,8 @@ body {
   float: right;
 }
 
-#kortit{
-	margin-left: 30%;
-	height: 500px;
-}
-.playbutton{
-  width: 269px;
-  float: left;
-}
 
-.backbutton{
-  width: 269px;
-  float: right;
-}
 
-#kortit{
-	margin-left: 30%;
-	width: 500px;
-
-}
 	
 .slot1 {
   width: 50px;
@@ -109,6 +118,51 @@ body {
   margin-left: 15%;
   
 }
+.slot9 {
+  width: 50px;
+  height: 25%;
+  
+}
+.slot10 {
+  width: 50px;
+  height: 25%;
+  
+}
+.slot11 {
+  width: 50px;
+  height: 25%;
+  
+}
+.slot12 {
+  width: 50px;
+  height: 25%;
+  
+  
+}
+.slot13 {
+  width: 50px;
+  height: 25%;
+  margin-left: 15%;
+  
+}
+.slot14{
+  width: 50px;
+  height: 25%;
+  margin-left: 15%;
+  
+}
+.slot15 {
+  width: 50px;
+  height: 25%;
+  margin-left: 15%;
+  
+}
+.slot16 {
+  width: 50px;
+  height: 25%;
+  margin-left: 15%;
+  
+}
 
 @media screen and (max-device-width: 800px){
 	
@@ -131,21 +185,38 @@ body {
   border-radius: 15px;
   
 }
-.vasen{
-  width: 40%;
-  margin-top: 10%;
-  float: left;
-}
-.oikea{
-  width: 40%;
-  margin-top: 10%;
-  float: left;
-}
-
 #kortit{
-  width: 100%;
+  width: 640px;
+  float: left;
   
 }
+
+.yksi{
+  width: 20%;
+  margin-top: 10%;
+  float: left;
+}
+.kaksi{
+  width: 20%;
+  margin-top: 10%;
+  float: left;
+  margin-left: 20%;
+}
+.kolme{
+  width: 20%;
+  margin-top: 10%;
+  float: left;
+  margin-right: 20%;
+}
+.nelja{
+  width: 20%;
+  margin-top: 10%;
+  float: right;
+}
+
+
+
+
 
 #kortti_takaa_1{
   width: 100%;
@@ -173,6 +244,48 @@ body {
   width: 100%;
   
 }
+#kortti_takaa_7{
+  width: 100%;
+}
+
+#kortti_takaa_8{
+  width: 100%;
+}
+
+#kortti_takaa_9{
+  width: 100%;
+}
+
+#kortti_takaa_10{
+  width: 100%;
+  
+}
+
+#kortti_takaa_11{
+  width: 100%;
+  
+}
+
+#kortti_takaa_12{
+  width: 100%;
+  
+}
+#kortti_takaa_13{
+  width: 100%;
+  
+}
+#kortti_takaa_14{
+  width: 100%;
+  
+}
+#kortti_takaa_15{
+  width: 100%;
+  
+}
+#kortti_takaa_16{
+  width: 100%;
+  
+}
 
 #kortti_1{
   width: 100%;
@@ -197,6 +310,43 @@ body {
 #kortti_6{
   width: 100%;
 }
+#kortti_7{
+  width: 100%;
+}
+
+#kortti_8{
+  width: 100%;
+}
+
+#kortti_9{
+  width: 100%;
+}
+
+#kortti_10{
+  width: 100%;
+}
+
+#kortti_11{
+  width: 100%;
+}
+
+#kortti_12{
+  width: 100%;
+}
+#kortti_13{
+  width: 100%;
+}
+
+#kortti_14{
+  width: 100%;
+}
+#kortti_15{
+  width: 100%;
+}
+#kortti_16{
+  width: 100%;
+}
+
 
 .slot1 {
   width: 300px;
@@ -230,6 +380,53 @@ body {
   height: 300px;
  
   
+}
+.slot7 {
+  width: 300px;
+  height: 300px;
+  
+}
+.slot8 {
+  width: 300px;
+  height: 300px;
+
+
+}
+.slot9{
+  width: 300px;
+  height: 300px;
+  
+}
+.slot10 {
+  width: 300px;
+  height: 300px;
+ 
+}
+.slot11 {
+  width: 300px;
+  height: 300px;
+ 
+ }
+
+.slot12 {
+  width: 300px;
+  height: 300px;
+}
+.slot13 {
+  width: 300px;
+  height: 300px;
+}
+.slot14 {
+  width: 300px;
+  height: 300px;
+}
+.slot15 {
+  width: 300px;
+  height: 300px;
+}
+.slot16 {
+  width: 300px;
+  height: 300px;
 }
 
 }

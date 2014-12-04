@@ -1,7 +1,7 @@
 $(document).ready(function(){
 	//ensimmäinen versio: löydä parit! :D
 	
-	var random = ['#kortti_1', '#kortti_2', '#kortti_3', '#kortti_4', '#kortti_5', '#kortti_6', '#kortti_7', '#kortti_8']
+	
 	
 	$('#kortti_1').hide();
 	$('#kortti_2').hide();
@@ -11,6 +11,14 @@ $(document).ready(function(){
 	$('#kortti_6').hide();
 	$('#kortti_7').hide();
 	$('#kortti_8').hide();
+	$('#kortti_9').hide();
+	$('#kortti_10').hide();
+	$('#kortti_11').hide();
+	$('#kortti_12').hide();
+	$('#kortti_13').hide();
+	$('#kortti_14').hide();
+	$('#kortti_15').hide();
+	$('#kortti_16').hide();
 	
 	$('#kortti_takaa_1').click(function(){
 		$('#kortti_takaa_1').hide();
@@ -44,6 +52,38 @@ $(document).ready(function(){
 		$('#kortti_takaa_8').hide();
 		$('#kortti_8').show();
 	});
+	$('#kortti_takaa_9').click(function(){
+		$('#kortti_takaa_9').hide();
+		$('#kortti_9').show();
+	});
+	$('#kortti_takaa_10').click(function(){
+		$('#kortti_takaa_10').hide();
+		$('#kortti_10').show();
+	});
+	$('#kortti_takaa_11').click(function(){
+		$('#kortti_takaa_11').hide();
+		$('#kortti_11').show();
+	});
+	$('#kortti_takaa_12').click(function(){
+		$('#kortti_takaa_12').hide();
+		$('#kortti_12').show();
+	});
+	$('#kortti_takaa_13').click(function(){
+		$('#kortti_takaa_13').hide();
+		$('#kortti_13').show();
+	});
+	$('#kortti_takaa_14').click(function(){
+		$('#kortti_takaa_14').hide();
+		$('#kortti_14').show();
+	});
+	$('#kortti_takaa_15').click(function(){
+		$('#kortti_takaa_15').hide();
+		$('#kortti_15').show();
+	});
+	$('#kortti_takaa_16').click(function(){
+		$('#kortti_takaa_16').hide();
+		$('#kortti_16').show();
+	});
 	
 	$('#kortti_1').click(function(){
 		$('#kortti_1').hide();
@@ -76,6 +116,38 @@ $(document).ready(function(){
 	$('#kortti_8').click(function(){
 		$('#kortti_8').hide();
 		$('#kortti_takaa_8').show();
+	});
+	$('#kortti_9').click(function(){
+		$('#kortti_9').hide();
+		$('#kortti_takaa_9').show();
+	});
+	$('#kortti_10').click(function(){
+		$('#kortti_10').hide();
+		$('#kortti_takaa_10').show();
+	});
+	$('#kortti_11').click(function(){
+		$('#kortti_11').hide();
+		$('#kortti_takaa_11').show();
+	});
+	$('#kortti_12').click(function(){
+		$('#kortti_12').hide();
+		$('#kortti_takaa_12').show();
+	});
+	$('#kortti_13').click(function(){
+		$('#kortti_13').hide();
+		$('#kortti_takaa_13').show();
+	});
+	$('#kortti_14').click(function(){
+		$('#kortti_14').hide();
+		$('#kortti_takaa_14').show();
+	});
+	$('#kortti_15').click(function(){
+		$('#kortti_15').hide();
+		$('#kortti_takaa_15').show();
+	});
+	$('#kortti_16').click(function(){
+		$('#kortti_16').hide();
+		$('#kortti_takaa_16').show();
 	});
 
 	
