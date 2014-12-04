@@ -45,8 +45,14 @@ body {
 	width: 33%;
 }
 #pair_kuva{
-	width: 100px;
-	margin-left: 20px;
+	width: 45%;
+	margin-left: 5%;
+	float:left;
+}
+#pair_kuva_2{
+	width: 45%;
+	margin-left: 5%;
+	float:left;
 }
 .playbutton{
   width: 269px;
@@ -65,32 +71,35 @@ body {
 
 
 .yksi{
-	width: 10%;
+	width: 24%;
 	float: left;
-	
-	
+	height:100%;
+	margin-right: auto;
+	margin-left: auto;
  }	
  
  .kaksi{
-	width: 10%;
+	width: 24%;
 	height: 100%;
 	float: left;
-	margin-left: 20%;
+	margin-right: auto;
+	margin-left: auto;
  }
 
 .kolme{
-	width: 10%;
+	width: 24%;
 	height: 100%;
 	float: left;
-	margin-right: 20%;
-	margin-left: 20%;
+	margin-right: auto;
+	margin-left: auto;
 	
 } 
 .nelja{
-	width: 10%;
+	width: 24%;
 	height: 100%;
-	float: right;
-	
+	float: left;
+	margin-right: auto;
+	margin-left: auto;
 } 
 
 
@@ -99,91 +108,102 @@ body {
 .slot1 {
   width: 50px;
   height: 25%;
+  margin-right: auto;
+margin-left: auto;
 }
 .slot2 {
   width: 50px;
   height: 25%;
-  
+  margin-right: auto;
+	margin-left: auto;
 }
 .slot3 {
   width: 50px;
   height: 25%;
-  
+  margin-right: auto;
+	margin-left: auto;
 }
 .slot4 {
   width: 50px;
   height: 25%;
-  
+  margin-right: auto;
+	margin-left: auto;
   
 }
 .slot5 {
   width: 50px;
   height: 25%;
   margin-left: 15%;
-  
+  margin-right: auto;
+	margin-left: auto;
 }
 .slot6{
   width: 50px;
   height: 25%;
-  margin-left: 15%;
-  
+  margin-right: auto;
+	margin-left: auto;
 }
 .slot7 {
   width: 50px;
   height: 25%;
-  margin-left: 15%;
+margin-right: auto;
+	margin-left: auto;
   
 }
 .slot8 {
   width: 50px;
   height: 25%;
-  margin-left: 15%;
-  
+margin-right: auto;
+	margin-left: auto;
 }
 .slot9 {
   width: 50px;
   height: 25%;
-  
+  margin-right: auto;
+	margin-left: auto;
 }
 .slot10 {
   width: 50px;
   height: 25%;
-  
+  margin-right: auto;
+	margin-left: auto;
 }
 .slot11 {
   width: 50px;
   height: 25%;
-  
+  margin-right: auto;
+	margin-left: auto;
 }
 .slot12 {
   width: 50px;
   height: 25%;
-  
+  margin-right: auto;
+	margin-left: auto;
   
 }
 .slot13 {
   width: 50px;
   height: 25%;
-  margin-left: 15%;
-  
+margin-right: auto;
+	margin-left: auto;
 }
 .slot14{
   width: 50px;
   height: 25%;
-  margin-left: 15%;
-  
+margin-right: auto;
+	margin-left: auto;
 }
 .slot15 {
   width: 50px;
   height: 25%;
-  margin-left: 15%;
-  
+margin-right: auto;
+	margin-left: auto;
 }
 .slot16 {
   width: 50px;
   height: 25%;
-  margin-left: 15%;
-  
+margin-right: auto;
+	margin-left: auto;
 }
 
 @media screen and (max-device-width: 960px){

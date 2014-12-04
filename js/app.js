@@ -6,7 +6,11 @@ $(document).ready(function(){
 	$('#game_screen').hide(); 				// piilottaa pelielementit- sisältävän divin
 	
 	
-	function shuffle(array) {
+	
+	//peliruutu
+	
+
+function shuffle(array) {
 		var l = array.length;
 		while(l) {
 			i = Math.floor(Math.random() * l--);
@@ -17,25 +21,12 @@ $(document).ready(function(){
 		console.log(array);
 		return array;
 	}
-	for(i=1; i<=16; i++){
-		var random = [	'#kortti_' + i ];
+	
+	var random = [16];
+	for(i=0; i<=15; i++){
+		random[i] = '#kortti_' + (i+1);
 	}
-			/*					'#kortti_2', 
-					'#kortti_3', 
-					'#kortti_4', 
-					'#kortti_5', 
-					'#kortti_6', 
-					'#kortti_7', 
-					'#kortti_8',
-					'#kortti_9', 
-					'#kortti_10', 
-					'#kortti_11', 
-					'#kortti_12', 
-					'#kortti_13', 
-					'#kortti_14', 
-					'#kortti_15', 
-					'#kortti_16'];
-			*/				
+			
 	var color = [	'keltainen',
 					'harmaa',
 					'lila',
@@ -61,24 +52,22 @@ $(document).ready(function(){
 			$('#game_screen').show();			// ja pelielementit sisältävä divi tulevat näkyviin
 			s_time = 0;
 			m_time = 0;
-			shuffle(random);
 			shuffle(color);
 			for(i=0 ; i <= 15; i ++){
 				$(random[i]).attr('src','kortit/kortti_' + color[i] +'.png');
 			};
 		 }
 	); 
-	shuffle(random);
+	//shuffle(random);
 	
-	
+	/*
 	for(i=0 ; i <= 15; i ++){
 		$(random[i]).hide();
 		$(random[i]).attr('src','kortit/kortti_' + color[i] +'.png');
 	};
+	*/
 	
-
 	
-	//peliruutu
 	
 	var s_time;								// määritellään muuttuja ajastimen sekunneille
 	var m_time;								// määritellään muuttuja ajastimen minuuteille
@@ -114,7 +103,7 @@ $(document).ready(function(){
 	
 	
 
-	for(var i=1;i<=8;i++){ 				//välillä 1-8 
+	for(var i=1;i<=16;i++){ 				//välillä 1-16 
 		$('#kortti_' + i).hide(); 		//piilottaa kaikki korttien etupuolen kuvat sisältävät divit
 	}
 	
@@ -144,23 +133,31 @@ $(document).ready(function(){
 					}					
 				}
 			}
-			if(open_cards >= 2){
+			if(open_cards == 2){
 				open_cards = 0;
 				if(open_1.attr('src') == open_2.attr('src')){
 					pairs ++;
+					closed_1.removeAttr('src');
+					closed_2.removeAttr('src');
 					var closer = setTimeout(function(){
-						$('#points').html('<img id="pair_kuva" type="button" src="parit/parit_' + pairs + '.png">');
+						if(pairs <= 4){
+							$('#points').html('<img id="pair_kuva" type="button" src="parit/parit_' + pairs + '.png">');
+						}else{
+							$('#points').html(
+									'<img id="pair_kuva" type="button" src="parit/parit_4.png">'
+									+
+									'<img id="pair_kuva_2" type="button" src="parit/parit_' + pairs + '.png">'
+							);
+						};
 						open_1.removeAttr('src');
 						open_2.removeAttr('src');
-						closed_1.removeAttr('src');
-						closed_2.removeAttr('src');
 					}
 					,
 					700);
 				}else{
 					var closer = setTimeout(function(){
-						for(var x = 1; x <= 8; x ++){
-							$('#kortti_' + x).hide();
+						for(var x = 1; x <= 16; x ++){
+							$(random[x-1]).hide();
 							$('#kortti_takaa_' + x).show();
 						}
 					}
@@ -173,136 +170,135 @@ $(document).ready(function(){
 	);
 	
 	// kortit ovat käännettävissä klikkaamalla:
-	$('#kortti_takaa_1').click(function(){	// kun painetaan ensimmäisen kortin taustaa
-		$('#kortti_takaa_1').hide();		// kortin tausta-kuva piiloutuu
-		$('#kortti_1').show();				// kortin etupuoli näyttäytyy
-		
+$('#kortti_takaa_1').click(function(){
+		$('#kortti_takaa_1').hide();
+		$(random[0]).show();
 	});
-	$('#kortti_takaa_2').click(function(){	// toisen korttipaikan kohdalla samalla tavalla
+	$('#kortti_takaa_2').click(function(){
 		$('#kortti_takaa_2').hide();
-		$('#kortti_2').show();
+		$(random[1]).show();
 	});
-	$('#kortti_takaa_3').click(function(){	//ja kolmannen
+	$('#kortti_takaa_3').click(function(){
 		$('#kortti_takaa_3').hide();
-		$('#kortti_3').show();
+		$(random[2]).show();
 	});
-	$('#kortti_takaa_4').click(function(){	// -,,-
+	$('#kortti_takaa_4').click(function(){
 		$('#kortti_takaa_4').hide();
-		$('#kortti_4').show();
+		$(random[3]).show();
 	});
-	$('#kortti_takaa_5').click(function(){	// -,,-
+	$('#kortti_takaa_5').click(function(){
 		$('#kortti_takaa_5').hide();
-		$('#kortti_5').show();
+		$(random[4]).show();
 	});
-	$('#kortti_takaa_6').click(function(){	// -,,-
+	$('#kortti_takaa_6').click(function(){
 		$('#kortti_takaa_6').hide();
-		$('#kortti_6').show();
+		$(random[5]).show();
 	});
-	$('#kortti_takaa_7').click(function(){	// -,,-
+	$('#kortti_takaa_7').click(function(){
 		$('#kortti_takaa_7').hide();
-		$('#kortti_7').show();
+		$(random[6]).show();
 	});
-	$('#kortti_takaa_8').click(function(){	// -,,-
+	$('#kortti_takaa_8').click(function(){
 		$('#kortti_takaa_8').hide();
-		$('#kortti_8').show();
+		$(random[7]).show();
 	});
-
-	$('#kortti_takaa_9').click(function(){
+		$('#kortti_takaa_9').click(function(){
 		$('#kortti_takaa_9').hide();
-		$('#kortti_9').show();
+		$(random[8]).show();
 	});
 	$('#kortti_takaa_10').click(function(){
 		$('#kortti_takaa_10').hide();
-		$('#kortti_10').show();
+		$(random[9]).show();
 	});
 	$('#kortti_takaa_11').click(function(){
 		$('#kortti_takaa_11').hide();
-		$('#kortti_11').show();
+		$(random[10]).show();
 	});
 	$('#kortti_takaa_12').click(function(){
 		$('#kortti_takaa_12').hide();
-		$('#kortti_12').show();
+		$(random[11]).show();
 	});
 	$('#kortti_takaa_13').click(function(){
 		$('#kortti_takaa_13').hide();
-		$('#kortti_13').show();
+		$(random[12]).show();
 	});
 	$('#kortti_takaa_14').click(function(){
 		$('#kortti_takaa_14').hide();
-		$('#kortti_14').show();
+		$(random[13]).show();
 	});
 	$('#kortti_takaa_15').click(function(){
 		$('#kortti_takaa_15').hide();
-		$('#kortti_15').show();
+		$(random[14]).show();
 	});
 	$('#kortti_takaa_16').click(function(){
 		$('#kortti_takaa_16').hide();
-		$('#kortti_16').show();
+		$(random[15]).show();
 	});
-
 	
-	$('#kortti_1').click(function(){		// ensimmäisen kortin etupuolta klikatessa
-		$('#kortti_1').hide();				// etupuoli piiloutuu
-		$('#kortti_takaa_1').show();		// taustakuva tulee esiin
+	
+	$(random[1]).click(function(){
+		$(random[1]).hide();
+		$('#kortti_takaa_1').show();
 	});
-	$('#kortti_2').click(function(){
-		$('#kortti_2').hide();
+	$(random[2]).click(function(){
+		$(random[2]).hide();
 		$('#kortti_takaa_2').show();
 	});
-	$('#kortti_3').click(function(){
-		$('#kortti_3').hide();
+	$(random[3]).click(function(){
+		$(random[3]).hide();
 		$('#kortti_takaa_3').show();
 	});
-	$('#kortti_4').click(function(){
-		$('#kortti_4').hide();
+	$(random[4]).click(function(){
+		$(random[4]).hide();
 		$('#kortti_takaa_4').show();
 	});
-	$('#kortti_5').click(function(){
-		$('#kortti_5').hide();
+	$(random[5]).click(function(){
+		$(random[5]).hide();
 		$('#kortti_takaa_5').show();
 	});
-	$('#kortti_6').click(function(){
-		$('#kortti_6').hide();
+	$(random[6]).click(function(){
+		$(random[6]).hide();
 		$('#kortti_takaa_6').show();
 	});
-	$('#kortti_7').click(function(){
-		$('#kortti_7').hide();
+	$(random[7]).click(function(){
+		$(random[7]).hide();
 		$('#kortti_takaa_7').show();
 	});
-	$('#kortti_8').click(function(){
-		$('#kortti_8').hide();
+	$(random[8]).click(function(){
+		$(random[8]).hide();
 		$('#kortti_takaa_8').show();
 	});
-	$('#kortti_9').click(function(){
-		$('#kortti_9').hide();
+	
+	$(random[9]).click(function(){
+		$(random[9]).hide();
 		$('#kortti_takaa_9').show();
 	});
-	$('#kortti_10').click(function(){
-		$('#kortti_10').hide();
+	$(random[10]).click(function(){
+		$(random[10]).hide();
 		$('#kortti_takaa_10').show();
 	});
-	$('#kortti_11').click(function(){
-		$('#kortti_11').hide();
+	$(random[11]).click(function(){
+		$(random[11]).hide();
 		$('#kortti_takaa_11').show();
 	});
-	$('#kortti_12').click(function(){
-		$('#kortti_12').hide();
+	$(random[12]).click(function(){
+		$(random[12]).hide();
 		$('#kortti_takaa_12').show();
 	});
-	$('#kortti_13').click(function(){
-		$('#kortti_13').hide();
+	$(random[13]).click(function(){
+		$(random[13]).hide();
 		$('#kortti_takaa_13').show();
 	});
-	$('#kortti_14').click(function(){
-		$('#kortti_14').hide();
+	$(random[14]).click(function(){
+		$(random[14]).hide();
 		$('#kortti_takaa_14').show();
 	});
-	$('#kortti_15').click(function(){
-		$('#kortti_15').hide();
+	$(random[15]).click(function(){
+		$(random[15]).hide();
 		$('#kortti_takaa_15').show();
 	});
-	$('#kortti_16').click(function(){
-		$('#kortti_16').hide();
+	$(random[16]).click(function(){
+		$(random[16]).hide();
 		$('#kortti_takaa_16').show();
 	});
 });
