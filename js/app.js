@@ -1,24 +1,69 @@
 $(document).ready(function(){
 	//ensimmäinen versio: löydä parit! :D
 	
+	function shuffle(array) {
+		var l = array.length;
+		while(l) {
+			i = Math.floor(Math.random() * l--);
+			t = array[l];
+			array[l] = array[i];
+			array[i] = t;
+			}
+		console.log(array);
+		return array;
+	}
+	var random = [	'#kortti_1', 
+					'#kortti_2', 
+					'#kortti_3', 
+					'#kortti_4', 
+					'#kortti_5', 
+					'#kortti_6', 
+					'#kortti_7', 
+					'#kortti_8',
+					'#kortti_9', 
+					'#kortti_10', 
+					'#kortti_11', 
+					'#kortti_12', 
+					'#kortti_13', 
+					'#kortti_14', 
+					'#kortti_15', 
+					'#kortti_16'];
+					
+	var color = [	'keltainen',
+					'harmaa',
+					'lila',
+					'pink',
+					'punainen',
+					'sininen',
+					'tsininen',
+					'vihrea',
+					'keltainen',
+					'harmaa',
+					'lila',
+					'pink',
+					'punainen',
+					'sininen',
+					'tsininen',
+					'vihrea'];
 	
 	
-	$('#kortti_1').hide();
-	$('#kortti_2').hide();
-	$('#kortti_3').hide();
-	$('#kortti_4').hide();
-	$('#kortti_5').hide();
-	$('#kortti_6').hide();
-	$('#kortti_7').hide();
-	$('#kortti_8').hide();
-	$('#kortti_9').hide();
-	$('#kortti_10').hide();
-	$('#kortti_11').hide();
-	$('#kortti_12').hide();
-	$('#kortti_13').hide();
-	$('#kortti_14').hide();
-	$('#kortti_15').hide();
-	$('#kortti_16').hide();
+	// Fisher-Yates - "shuffle" funktiota kutsutaan "kysymykset"-arrayhin. Ja näin pakka on sekaisin!
+	$('#play_button').click(
+		function(){ 
+		shuffle(random);
+		shuffle(color);
+		for(i=0 ; i <= 15; i ++){
+			$(random[i]).attr('src','kortit/kortti_' + color[i] +'.png');
+		};
+		 
+	}); 
+	shuffle(random);
+	
+	
+	for(i=0 ; i <= 15; i ++){
+		$(random[i]).hide();
+		$(random[i]).attr('src','kortit/kortti_' + color[i] +'.png');
+	};
 	
 	$('#kortti_takaa_1').click(function(){
 		$('#kortti_takaa_1').hide();
