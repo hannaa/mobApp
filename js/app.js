@@ -54,6 +54,8 @@ $(document).ready(function(){
 	var open_2;
 	var closed_1;
 	var closed_2;
+	var color_1;
+	var color_2;
 	
 		// lis‰t‰‰n kortit (2x jokaista v‰ri‰) muuttujaan 'color'
 	var color = [	
@@ -108,7 +110,7 @@ $(document).ready(function(){
 				m_time ++;					
 				s_time = 0;
 				
-				// minuuttilaskurin saavuttaessa 10 
+				// minuuttilaskurin saavuttaessa 10 (!lukua muuttamalla peliaika lyhenee)
 				if(m_time > 9){		
 					// laskuri tyhjennet‰‰n, peli katoaa n‰kyvist‰, ajastimen tilalle "Game over!"
 					clearInterval(timer);
@@ -140,21 +142,23 @@ $(document).ready(function(){
 				if(open_cards == 1){
 					open_1 = $('#kortti_' + o);
 					closed_1 = $('#kortti_takaa_' + o);
+					color_1 = color[ (o-1) ];
 				}
 				
 				// toisen avatun kortin tiedot tallentuu
 				if(open_cards == 2){
 					open_2 = $('#kortti_' + o);
 					closed_2 = $('#kortti_takaa_' + o);
+					color_2 = color[ (o-1) ];
 					paired();
-
 				}
 				
 				//testing:
 				console.log('slot: ' +o);
 				console.log('open cards: ' +open_cards);
 				console.log('pairs: ' + pairs);
-				
+				console.log('c1:' +  color_1);
+				console.log('c2:' + color_2);
 				/*
 				console.log('open_1: ' + open_1);
 				console.log('open_2: ' + open_2);
@@ -169,16 +173,26 @@ $(document).ready(function(){
 	function paired(){
 		tries ++;
 		console.log("Try: " + tries);
-		// jos kortit vastaavat toisiaan 
-		if(open_1.attr('src') == open_2.attr('src')){
 		
+		
+		
+		// jos kortit vastaavat toisiaan 
+		//if(open_1.attr('src') == open_2.attr('src')){
+		if(color_1 == color_2){
 			// parilaskuri kasvaa yhdell‰
 			pairs ++;
+			
+			// k‰‰nnettyjen korttien laskuri nollataan
 			open_cards = 0;
+			
+			// kutsutaan kuvann‰ytt‰j‰ funktio paria vastaavalla v‰rill‰
+			showimage(color_1);
 			
 			// kortit n‰kyv‰t avoimina 0,7 sekuntia
 			var closer = setTimeout(function(){
 			
+				
+				
 				// nelj‰ ensimm‰ist‰ paria kasautuvat ensimm‰iseen pinoon
 				if(pairs <= 4){
 					$('#points').html('<img id="pair_kuva" type="button" src="parit/parit_' + pairs + '.png">');
@@ -197,9 +211,13 @@ $(document).ready(function(){
 				open_2.removeAttr('src');
 				closed_1.removeAttr('src');
 				closed_2.removeAttr('src');
+				
+				// tyhjennet‰‰n avattujen korttien v‰ritiedot
+				color_1 = undefined;
+				color_2 = undefined;
 			}
 			,
-			700);
+			1000);
 		
 		// jos kortit eiv‰t vastaa toisiaan kortit k‰‰ntyv‰t takaisin 0,7 sekunnin kuluttua
 		}else{
@@ -208,12 +226,50 @@ $(document).ready(function(){
 					$('#kortti_' + x).hide();
 					$('#kortti_takaa_' + x).show();
 				}
+				
+				// tyhjennet‰‰n avattujen korttien v‰ritiedot
+				color_1 = undefined;
+				color_2 = undefined;
 			}
 			,
 			700);
 		}
 	}
 	
+	// funktio "showimage()" v‰l‰ytt‰‰ ruudulla saadun parin mukaisen kuvan
+	function showimage(color_1){
+	
+		// m‰‰rittelee annetun v‰rin kuvann‰ytt‰j‰n sis‰iseen muuttujaan
+		var c = color_1;
+		
+		// lis‰‰ peliruutuun paria vastaavan v‰risen kuvan
+		$('#game_screen').append('<div id="got_pair"><img id="gp_image" src="parit/pari_' + c + '.png"></div>');
+		
+		// antaa k‰ytett‰v‰lle diville ja v‰l‰ht‰v‰lle kuvalle css:arvoja
+		$("#got_pair").css({
+			height: '100%',
+			width: '100%',
+			position: 'fixed',
+			top: 0,
+			left: 'auto',
+			right: 'auto',
+			display: 'none'
+			}).show()
+		$("#gp_image").css({
+			width: '90%',
+			left: 'auto',
+			right: 'auto',
+			top: '10%',
+			bottom: '10%',
+			display: 'none'
+			}).show()
+		
+		// poistaa kuvadivin sekunnin kuluttua
+		setTimeout(function() {
+			$("#got_pair").remove();
+			}, 
+		1000)
+	}
 
 /***************************** peliruutu *****************************************************/
 	
@@ -232,8 +288,6 @@ $(document).ready(function(){
 	);
 	
 	// kortin takakuvaa klikattaessa kutsutaan "opener()", joka vaihtaa takakuvan tilalle etukuvan
-	
-	
 	for(var x = 1; x <= 16; x ++){
 		$('#kortit').on('click', '#kortti_takaa_' + x, opener(x));
 	}
@@ -252,13 +306,59 @@ $(document).ready(function(){
 	}
 	*/
 	
-	
+	// klikattaessa korttien alueella mit‰ tahansa, k‰‰ntˆlaskuri on kaksi, se nollaantuu
 	$('#kortit').click(
 		function(){
 			if(open_cards == 2){
 				open_cards = 0;
 			}
-			
 		}
 	);
+	
+/***************************** voitto! *****************************************************/
+
+	function win(){
+		
+		$('#start_screen').show();
+		$('#game_screen').hide()
+		// lis‰‰ peliruutuun paria vastaavan v‰risen kuvan
+		$('#container').append('<div id="win">' +
+			'<img id="winner_1" src="parit/parit_4.png">' +
+			'<img id="winner_2" src="parit/parit_4.png">' +
+			'</div>');
+		
+		// antaa k‰ytett‰v‰lle diville ja v‰l‰ht‰v‰lle kuvalle css:arvoja
+		$("#got_pair").css({
+			height: '100%',
+			width: '100%',
+			position: 'fixed',
+			top: 0,
+			left: 'auto',
+			right: 'auto',
+			display: 'none'
+			}).show()
+		$("#gp_image").css({
+			width: '90%',
+			left: 'auto',
+			right: 'auto',
+			top: '10%',
+			bottom: '10%',
+			display: 'none'
+			}).show()
+		
+		// poistaa kuvadivin sekunnin kuluttua
+		setTimeout(function() {
+			$("#got_pair").remove();
+			}, 
+		1000)
+	}
+
+
+
+
+
+
+
+
+
 });
