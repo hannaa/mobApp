@@ -181,7 +181,9 @@ $(document).ready(function(){
 		if(color_1 == color_2){
 			// parilaskuri kasvaa yhdell‰
 			pairs ++;
-			
+			if(pairs==8){
+				win();
+			}
 			// k‰‰nnettyjen korttien laskuri nollataan
 			open_cards = 0;
 			
@@ -317,48 +319,15 @@ $(document).ready(function(){
 	
 /***************************** voitto! *****************************************************/
 
-	function win(){
-		
+	function win(){		
 		$('#start_screen').show();
-		$('#game_screen').hide()
-		// lis‰‰ peliruutuun paria vastaavan v‰risen kuvan
-		$('#container').append('<div id="win">' +
-			'<img id="winner_1" src="parit/parit_4.png">' +
-			'<img id="winner_2" src="parit/parit_4.png">' +
-			'</div>');
+		$('#game_screen').hide();
+
+		$.ajax({url:"win.txt",success:function(result){
+			$("#win").html(result);
+			$('#tries').append(tries + " tries ");
+			$('#time').append(m_time + " minutes and " + s_time + " seconds");
+		}});
 		
-		// antaa k‰ytett‰v‰lle diville ja v‰l‰ht‰v‰lle kuvalle css:arvoja
-		$("#got_pair").css({
-			height: '100%',
-			width: '100%',
-			position: 'fixed',
-			top: 0,
-			left: 'auto',
-			right: 'auto',
-			display: 'none'
-			}).show()
-		$("#gp_image").css({
-			width: '90%',
-			left: 'auto',
-			right: 'auto',
-			top: '10%',
-			bottom: '10%',
-			display: 'none'
-			}).show()
-		
-		// poistaa kuvadivin sekunnin kuluttua
-		setTimeout(function() {
-			$("#got_pair").remove();
-			}, 
-		1000)
 	}
-
-
-
-
-
-
-
-
-
 });

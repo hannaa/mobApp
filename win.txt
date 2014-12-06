@@ -1,0 +1,9 @@
+
+<h1 id="y">YOU WON</h1>
+<p id="x">With </p>
+<p id="tries"></p>
+<p id="time"></p>
+<div id="kuvat">
+<img  src="parit/parit_4.png">
+<img  src="parit/parit_4.png">
+</div>
