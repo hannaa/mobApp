@@ -16,20 +16,24 @@ $(document).ready(function(){
 			s_time = 0;								
 			m_time = 0;	
 			
-			// asettaa parilaskurin nollaksi
+			// asettaa parilaskurin nollaksi ja poistaa parit pistekasasta
 			pairs = 0;
+			tries = 0;
+			$('#points').empty();
 
 			// sekoittaa kortin kuvat (funktio shuffle() löytyy alempaa
 			shuffle(color);	
 
 			// asettaa sekoitetut kortit pelipöytään
 			for(i=0 ; i <= 15; i ++){
-				$(random[i]).attr('src','kortit/kortti_' + color[i] +'.png');
+				$('#kortti_' + (i+1)).attr('src','kortit/kortti_' + color[i] +'.png');
+				$('#kortti_takaa_' + (i+1)).attr('src','kortit/kortti_takaa.png');
 			};
 			
-			//piilottaa korttien etupuolen kuvat sisältävät divit
+			//piilottaa korttien etupuolen kuvat sisältävät divit ja näyttää kuvat takaa
 			for(var i=1;i<=16;i++){
-				$('#kortti_' + i).hide(); 		
+				$('#kortti_' + i).hide();
+				$('#kortti_takaa_' + i).show();
 			}
 		}
 	);
@@ -44,6 +48,7 @@ $(document).ready(function(){
 	
 		// pelilogiikan muuttujat
 	var pairs;
+	var tries;
 	var open_cards = 0;
 	var open_1;
 	var open_2;
@@ -69,16 +74,7 @@ $(document).ready(function(){
 		'tsininen',
 		'vihrea'
 	];
-	
-		// muuttuja korttien kuvapaikoille, sekoitettavissa
-	var random = [16];
-	for(i=0; i<=15; i++){
-		random[i] = '#kortti_' + (i+1);
-	}	
-	
-		// sekoittaa korttien kuvapaikat
-	//shuffle(random);	
-	
+
 	// korttien sekoittamiseen lainattu Fisher-Yates Shuffle -funktio
 	function shuffle(array) {
 		var l = array.length;
@@ -150,19 +146,75 @@ $(document).ready(function(){
 				if(open_cards == 2){
 					open_2 = $('#kortti_' + o);
 					closed_2 = $('#kortti_takaa_' + o);
+					paired();
+
 				}
 				
 				//testing:
 				console.log('slot: ' +o);
 				console.log('open cards: ' +open_cards);
 				console.log('pairs: ' + pairs);
+				
+				/*
 				console.log('open_1: ' + open_1);
 				console.log('open_2: ' + open_2);
 				console.log('closed_1: ' + closed_1);
 				console.log('closed_2: ' + closed_2);
+				*/
 				}
 	}
 	
+	
+	// parittaja funktio "paired()" tarkistaa ovatko avatut kortit pari
+	function paired(){
+		tries ++;
+		console.log("Try: " + tries);
+		// jos kortit vastaavat toisiaan 
+		if(open_1.attr('src') == open_2.attr('src')){
+		
+			// parilaskuri kasvaa yhdellä
+			pairs ++;
+			open_cards = 0;
+			
+			// kortit näkyvät avoimina 0,7 sekuntia
+			var closer = setTimeout(function(){
+			
+				// neljä ensimmäistä paria kasautuvat ensimmäiseen pinoon
+				if(pairs <= 4){
+					$('#points').html('<img id="pair_kuva" type="button" src="parit/parit_' + pairs + '.png">');
+				
+				// parit 5-8 kasautuvat toiseen pinoon				
+				}else{
+					$('#points').html(
+						'<img id="pair_kuva" type="button" src="parit/parit_4.png">'
+						+
+						'<img id="pair_kuva_2" type="button" src="parit/parit_' + pairs + '.png">'
+					);
+				};
+				
+				// kasoihin siirtyvät kortit poistuvat pelistä
+				open_1.removeAttr('src');
+				open_2.removeAttr('src');
+				closed_1.removeAttr('src');
+				closed_2.removeAttr('src');
+			}
+			,
+			700);
+		
+		// jos kortit eivät vastaa toisiaan kortit kääntyvät takaisin 0,7 sekunnin kuluttua
+		}else{
+			var closer = setTimeout(function(){
+				for(var x = 1; x <= 16; x ++){
+					$('#kortti_' + x).hide();
+					$('#kortti_takaa_' + x).show();
+				}
+			}
+			,
+			700);
+		}
+	}
+	
+
 /***************************** peliruutu *****************************************************/
 	
 	// "BACK" -painiketta painettaessa
@@ -179,62 +231,34 @@ $(document).ready(function(){
 		}
 	);
 	
-	// pelitoiminnallisuus
+	// kortin takakuvaa klikattaessa kutsutaan "opener()", joka vaihtaa takakuvan tilalle etukuvan
+	
+	
+	for(var x = 1; x <= 16; x ++){
+		$('#kortit').on('click', '#kortti_takaa_' + x, opener(x));
+	}
+
+	/*
+	else{
+		for(var x = 1; x <= 16; x ++){
+		$('#kortit').off('click', '#kortti_takaa_' + x, opener(x));
+	}
+	}
+	
+	while(open_cards == 2){
+	for(var x = 1; x <= 16; x ++){
+		$('#kortit').off('click', '#kortti_takaa_' + x, opener(x));
+	}
+	}
+	*/
+	
+	
 	$('#kortit').click(
 		function(){
 			if(open_cards == 2){
 				open_cards = 0;
-				if(open_1.attr('src') == open_2.attr('src')){
-					pairs ++;
-					var closer = setTimeout(function(){
-						if(pairs <= 4){
-							$('#points').html('<img id="pair_kuva" type="button" src="parit/parit_' + pairs + '.png">');
-						}else{
-							$('#points').html(
-									'<img id="pair_kuva" type="button" src="parit/parit_4.png">'
-									+
-									'<img id="pair_kuva_2" type="button" src="parit/parit_' + pairs + '.png">'
-							);
-						};
-						open_1.removeAttr('src');
-						open_2.removeAttr('src');
-						closed_1.removeAttr('src');
-						closed_2.removeAttr('src');
-						
-					}
-					,
-					700);
-				}else{
-					var closer = setTimeout(function(){
-						for(var x = 1; x <= 16; x ++){
-							$('#kortti_' + x).hide();
-							$('#kortti_takaa_' + x).show();
-						
-						}
-					}
-					,
-					700);
-				}
 			}
-		
+			
 		}
 	);
-	
-	// kortin takakuvaa klikattaessa kutsutaan "opener()", joka vaihtaa takakuvan tilalle etukuvan
-	$('#kortti_takaa_1').click(opener(1));
-	$('#kortti_takaa_2').click(opener(2));
-	$('#kortti_takaa_3').click(opener(3));
-	$('#kortti_takaa_4').click(opener(4));
-	$('#kortti_takaa_5').click(opener(5));
-	$('#kortti_takaa_6').click(opener(6));
-	$('#kortti_takaa_7').click(opener(7));
-	$('#kortti_takaa_8').click(opener(8));
-	$('#kortti_takaa_9').click(opener(9));
-	$('#kortti_takaa_10').click(opener(10));
-	$('#kortti_takaa_11').click(opener(11));
-	$('#kortti_takaa_12').click(opener(12));
-	$('#kortti_takaa_13').click(opener(13));
-	$('#kortti_takaa_14').click(opener(14));
-	$('#kortti_takaa_15').click(opener(15));
-	$('#kortti_takaa_16').click(opener(16));
 });
