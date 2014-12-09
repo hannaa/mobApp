@@ -3,6 +3,10 @@ body {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
 	background-color: #8B008B;
+	font-family: 'Luckiest Guy';
+	color: #FFFFFF;
+	text-align: center;
+	font-size: 14px;
 	
 }
 .container{
@@ -27,142 +31,191 @@ body {
 	margin-top: 5%;
 	width: 700px;
 	height: 600px;
-	background-color: #000000;
+	background-color: #8B008B;
 	
 }
 
-.yksi{
-	width: 10%;
-	height: 100%;
+#timer{
+	font-family: 'Luckiest Guy';
+	font-size: 50px;
+	color:  #FFFFFF;
+	width: 33%;
+	text-align:center;
 	float: left;
-	
-	
+}
+#y #x #tries #time{
+	font-family: 'Luckiest Guy';
+	font-size: 50px;
+	color:  #FFFFFF;
+	width: 33%;
+	text-align:center;
+	float: left;
+}
+#points{
+	height:50px;
+	float:left;
+	width: 33%;
+}
+#pair_kuva{
+	width: 45%;
+	margin-left: 5%;
+	float:left;
+}
+#pair_kuva_2{
+	width: 45%;
+	margin-left: 5%;
+	float:left;
+}
+.playbutton{
+  width: 269px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.backbutton{
+  width: 33%;
+  float: left;
+  
+}
+#back_button{
+	width: 70%;
+	float: center;
+}
+
+
+.yksi{
+	width: 24%;
+	float: left;
+	height:100%;
+	margin-right: auto;
+	margin-left: auto;
  }	
  
  .kaksi{
-	width: 10%;
+	width: 24%;
 	height: 100%;
 	float: left;
-	margin-left: 20%;
+	margin-right: auto;
+	margin-left: auto;
  }
 
 .kolme{
-	width: 10%;
+	width: 24%;
 	height: 100%;
 	float: left;
-	margin-right: 20%;
-	margin-left: 20%;
+	margin-right: auto;
+	margin-left: auto;
 	
 } 
 .nelja{
-	width: 10%;
+	width: 24%;
 	height: 100%;
-	float: right;
-	
+	float: left;
+	margin-right: auto;
+	margin-left: auto;
 } 
 
-.playbutton{
-  width: 269px;
-  float: right;
-}
-
-.backbutton{
-  width: 269px;
-  float: right;
-}
 
 
 
-	
 .slot1 {
   width: 50px;
   height: 25%;
-  
+  margin-right: auto;
+margin-left: auto;
 }
 .slot2 {
   width: 50px;
   height: 25%;
-  
+  margin-right: auto;
+	margin-left: auto;
 }
 .slot3 {
   width: 50px;
   height: 25%;
-  
+  margin-right: auto;
+	margin-left: auto;
 }
 .slot4 {
   width: 50px;
   height: 25%;
-  
+  margin-right: auto;
+	margin-left: auto;
   
 }
 .slot5 {
   width: 50px;
   height: 25%;
   margin-left: 15%;
-  
+  margin-right: auto;
+	margin-left: auto;
 }
 .slot6{
   width: 50px;
   height: 25%;
-  margin-left: 15%;
-  
+  margin-right: auto;
+	margin-left: auto;
 }
 .slot7 {
   width: 50px;
   height: 25%;
-  margin-left: 15%;
+margin-right: auto;
+	margin-left: auto;
   
 }
 .slot8 {
   width: 50px;
   height: 25%;
-  margin-left: 15%;
-  
+margin-right: auto;
+	margin-left: auto;
 }
 .slot9 {
   width: 50px;
   height: 25%;
-  
+  margin-right: auto;
+	margin-left: auto;
 }
 .slot10 {
   width: 50px;
   height: 25%;
-  
+  margin-right: auto;
+	margin-left: auto;
 }
 .slot11 {
   width: 50px;
   height: 25%;
-  
+  margin-right: auto;
+	margin-left: auto;
 }
 .slot12 {
   width: 50px;
   height: 25%;
-  
+  margin-right: auto;
+	margin-left: auto;
   
 }
 .slot13 {
   width: 50px;
   height: 25%;
-  margin-left: 15%;
-  
+margin-right: auto;
+	margin-left: auto;
 }
 .slot14{
   width: 50px;
   height: 25%;
-  margin-left: 15%;
-  
+margin-right: auto;
+	margin-left: auto;
 }
 .slot15 {
   width: 50px;
   height: 25%;
-  margin-left: 15%;
-  
+margin-right: auto;
+	margin-left: auto;
 }
 .slot16 {
   width: 50px;
   height: 25%;
-  margin-left: 15%;
-  
+margin-right: auto;
+	margin-left: auto;
 }
 
 @media screen and (max-device-width: 960px){
@@ -213,7 +266,7 @@ body {
 .nelja{
   width: 20%;
   margin-top: 10%;
-  float: right;
+  float: left;
 }
 
 

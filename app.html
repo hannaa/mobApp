@@ -1,38 +1,37 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title> Mobile Application </title>
-		<meta charset="UTF-8">
-		<link rel="stylesheet" type="text/css" href="css/app.css">
-		<link href='http://fonts.googleapis.com/css?family=Luckiest+Guy' rel='stylesheet' type='text/css'>
-		<script src="jquery-2.1.1.min.js"></script> 
-		<script src="js/app.js"></script>
-	</head>
-	<body>
-		<div class="container">
+	<title> Mobile Application </title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="user-scalable=0">
+	<link rel="stylesheet" type="text/css" href="css/app.css">
+	<link href='http://fonts.googleapis.com/css?family=Luckiest+Guy' rel='stylesheet' type='text/css'>
+	<script src="jquery-2.1.1.min.js"></script> 
+	<script src="js/app.js"></script>
+</head>
+<body>
+	<div class="container">
 		
-			<div class="header">
+		<div class="header">
 			<h1> Codename Dreadful Finger </h1>
-		
 		</div>
-
-		<!--<div class="playbutton">
+		<div id="win"></div>
+		<div id="start_screen" class="playbutton">
 			<img id="play_button" type="button" src="button/play_button.png">
 		</div>
-		<div class="backbutton">
-			<img id="back_button" type="button" src="button/back_button.png">
-		</div> -->
-
-
-	
 		
+		<div id="game_screen">
 		<div id="kortit">
+			<div id="points"></div>
+			<div id="timer">00:00</div>
+			<div class="backbutton">
+				<img id="back_button" type="button" src="button/back_button.png">
+			</div>
 			<div class="yksi">
 				<div class="slot1">
 					<img id="kortti_takaa_1" type="button" src="kortit/kortti_takaa.png">
 					<img id="kortti_1" type="button" src="kortit/kortti_keltainen.png">
 				</div>
-			
 				<div class="slot2">
 					<img id="kortti_takaa_2" type="button" src="kortit/kortti_takaa.png">
 					<img id="kortti_2" type="button" src="kortit/kortti_vihrea.png">
@@ -45,9 +44,7 @@
 					<img id="kortti_takaa_4" type="button" src="kortit/kortti_takaa.png">
 					<img id="kortti_4" type="button" src="kortit/kortti_harmaa.png">
 				</div>	
-			
 			</div>
-			
 			
 			<div class="kaksi">
 				<div class="slot5">
@@ -105,11 +102,6 @@
 					<img id="kortti_16" type="button" src="kortit/kortti_tsininen.png">
 				</div>
 			</div>
-			
-		
-				
-		
-	</div>
 		</div>
 	</body>
 
