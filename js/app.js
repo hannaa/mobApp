@@ -270,7 +270,7 @@ $(document).ready(function(){
 		setTimeout(function() {
 			$("#got_pair").remove();
 			}, 
-		1500)
+
 	}
 
 /***************************** peliruutu *****************************************************/
