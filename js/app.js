@@ -269,7 +269,7 @@ $(document).ready(function(){
 		// poistaa kuvadivin sekunnin kuluttua
 		setTimeout(function() {
 			$("#got_pair").remove();
-			}, 
+			}, 1500); 
 
 	}
 
