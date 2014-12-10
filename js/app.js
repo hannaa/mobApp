@@ -9,8 +9,10 @@ $(document).ready(function(){
 	$('#play_button').click(
 		function(){ 
 			// piilottaa aloitusruutu-divin ja n‰ytt‰‰ pelielementit sis‰lt‰v‰n divin
+			// sek‰ lis‰ksi uuden pelin alkaessa tuhoaa edellisen pelin tiedot
 			$('#start_screen').hide();
 			$('#game_screen').show();
+			$("#win").empty();
 			
 			// asettaa laskurin sekunnit ja minuutit nollaksi
 			s_time = 0;								
